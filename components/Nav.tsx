@@ -1,21 +1,34 @@
-const items = [
-  { name: "About", path: "/about" },
-  { name: "Case Study", path: "/case-study" },
-  { name: "Blog", path: "/blog" },
-  { name: "Contact", path: "/contact" },
-];
-export function Nav() {
+import navItems from './menuitems.ts'
+
+type Props = {
+  active: string;
+};
+
+export default function Nav({ active }: Props) {
+
   return (
-    <nav class="bg-gray-800">
-      <ul class="flex justify-between items-center px-8 py-4">
-        {items.map((item) => (
+    <div class="bg-white w-full max-w-screen-lg py-6 px-8 flex flex-col md:flex-row gap-4">
+      <div class="flex items-center flex-1">
+        <div class="text-2xl  ml-1 font-bold">
+          Rosie Davies
+        </div>
+      </div>
+      <ul class="flex items-center gap-6">
+        {navItems.map((menu) => (
           <li>
-            <a href={item.path} class="text-gray-300 hover:text-white">
-              {item.name}
+            <a
+              href={menu.path}
+              class={"text-gray-500 hover:text-gray-700 py-1 border-gray-500" +
+                (menu.path === active ? " font-bold border-b-2" : "")}
+            >
+              {menu.name}
             </a>
           </li>
         ))}
       </ul>
-    </nav>
+    </div>
   );
 }
+
+
+

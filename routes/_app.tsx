@@ -1,5 +1,6 @@
-import { AppProps } from "$fresh/server.ts";
-import {Nav} from "../components/Nav.tsx";
+import { AppProps, Handlers } from "$fresh/server.ts";
+import Nav from "../components/Nav.tsx";
+import Footer from "../components/Footer.tsx";
 import { getCookies } from "std/http/cookie.ts";
 
 export const handler: Handlers = {
@@ -9,12 +10,14 @@ export const handler: Handlers = {
     }
 }
 
-export default function App({ Component, ...rest }: AppProps) {
-    console.log(rest); 
+export default function App({ Component }: AppProps) { 
     return (
     <>
       <Nav />
-      <Component />
+      <div className="container mx-auto">
+        <Component />
+      </div>
+      <Footer/>
       {/* You currently {data.isAllowed ? "are" : "are not"} logged in. */}
     </>
   );
