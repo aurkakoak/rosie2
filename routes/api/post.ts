@@ -10,11 +10,11 @@ export const handler: Handlers = {
 
   async POST(req) {
     const form = await req.formData();
-    const {title, body} = formDataToObject(form);
-    db.create('post', {
-        title, 
-        body, 
-    })
+    const { title, body } = formDataToObject(form);
+    db.create("post", {
+      title,
+      body,
+    });
     const headers = new Headers(req.headers);
     return new Response(null, {
       status: 303,

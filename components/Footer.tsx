@@ -1,24 +1,28 @@
-import navItems from './menuitems.ts'
-  
-
+import navItems from "./menuitems.ts";
+import { asset } from "$fresh/runtime.ts";
 
 export default function Footer() {
   const menus = [
     {
-      title: "Documentation",
-      children: navItems
+      title: "Website",
+      children: navItems,
     },
     {
       title: "Community",
       children: [
-        { name: "Forum", href: "#" },
-        { name: "Discord", href: "#" },
+        { name: "Forum", path: "#" },
+        { name: "Discord", path: "#" },
       ],
     },
   ];
 
   return (
-    <div class="bg-white flex flex-col md:flex-row w-full max-w-screen-lg gap-8 md:gap-16 px-8 py-8 text-sm">
+    <div
+      class={`mx-auto bg-white flex flex-col md:flex-row w-full max-w-screen-lg gap-8 md:gap-16 px-8 py-8 text-sm`}
+      style={`background-image: url(${
+        asset("squiggle.svg")
+      }); background-size: cover;opacity: 0.5;`}
+    >
       <div class="flex-1">
         <div class="flex items-center gap-1">
           <div class="font-bold text-2xl">

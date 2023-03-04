@@ -1,17 +1,15 @@
-import navItems from './menuitems.ts'
+import navItems from "./menuitems.ts";
+import { asset } from "$fresh/runtime.ts";
 
 type Props = {
   active: string;
 };
 
 export default function Nav({ active }: Props) {
-
   return (
-    <div class="bg-white w-full max-w-screen-lg py-6 px-8 flex flex-col md:flex-row gap-4">
+    <div class="mx-auto bg-white w-full max-w-screen-lg py-6 px-8 flex flex-col md:flex-row gap-4">
       <div class="flex items-center flex-1">
-        <div class="text-2xl  ml-1 font-bold">
-          Rosie Davies
-        </div>
+        <img src={asset("/rosie.png")} alt="logo" class="h-24" />
       </div>
       <ul class="flex items-center gap-6">
         {navItems.map((menu) => (
@@ -29,6 +27,3 @@ export default function Nav({ active }: Props) {
     </div>
   );
 }
-
-
-

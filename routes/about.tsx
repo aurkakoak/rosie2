@@ -11,7 +11,7 @@ export default function Home() {
             I’m a qualified educational psychotherapist specialising in helping
             children to overcome emotional barriers to learning.
           </p>
-          
+
           <p>
             I support families and schools to understand a child’s behaviour and
             learning needs through listening to their experiences and working
